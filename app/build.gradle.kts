@@ -1,21 +1,21 @@
+import org.jetbrains.kotlin.cli.jvm.main
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.application)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+//    alias(libs.plugins.android.application)
+//    alias(libs.plugins.org.jetbrains.kotlin.android)
+    id("mingki.android.application")
+    id("mingki.android.hilt")
+    id("mingki.android.navigation")
 }
 
 android {
     namespace = "com.mingki.musicapp"
-    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.mingki.musicapp"
-        minSdk = 21
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
     }
 
     buildTypes {
@@ -27,17 +27,12 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
 
 }
 
 dependencies {
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
