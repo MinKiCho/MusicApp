@@ -7,7 +7,7 @@ buildscript {
 
     }
     dependencies {
-        classpath(libs.navigation.safe.args)
+        classpath(libs.androidx.navigation.safe.argsPlugin)
     }
 }
 
