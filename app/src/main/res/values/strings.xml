@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Music App</string>
+    <string name="home">홈</string>
+    <string name="around">둘러보기</string>
+    <string name="stereo">오디오</string>
+    <string name="search">검색</string>
+    <string name="strorage">보관함</string>
 </resources>

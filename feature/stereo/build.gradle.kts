@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mingki.home"
+    namespace = "com.mingki.stereo"
 
 }
 

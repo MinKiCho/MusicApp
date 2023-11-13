@@ -6,7 +6,6 @@ plugins {
 //    alias(libs.plugins.org.jetbrains.kotlin.android)
     id("mingki.android.application")
     id("mingki.android.hilt")
-    id("mingki.android.navigation")
 }
 
 android {
@@ -28,9 +27,19 @@ android {
         }
     }
 
+
+
 }
 
 dependencies {
+
+    implementation(project(":feature:home"))
+    implementation(project(":feature:around"))
+    implementation(project(":feature:stereo"))
+    implementation(project(":feature:search"))
+    implementation(project(":feature:storage"))
+
+
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
 
