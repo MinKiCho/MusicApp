@@ -2,6 +2,7 @@ package com.mingki.musicapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -25,5 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNav.apply {
             setupWithNavController(navController)
         }
+
+        window.statusBarColor = ContextCompat.getColor(this, R.color.transparent_color)
     }
 }
