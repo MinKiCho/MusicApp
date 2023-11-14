@@ -14,6 +14,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 apply("mingki.android.hilt")
                 apply("mingki.android.navigation")
             }
+
             extensions.configure<LibraryExtension> {
                 defaultConfig {
                     testInstrumentationRunner =
@@ -22,9 +23,11 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+                add("implementation", project(":core:model"))
+                add("implementation", project(":core:ui"))
+
                 add("testImplementation", kotlin("test"))
                 add("androidTestImplementation", kotlin("test"))
-
 
                 add("implementation", libs.findLibrary("androidx.navigation.fragment").get())
                 add("implementation", libs.findLibrary("androidx.navigation.ui").get())
