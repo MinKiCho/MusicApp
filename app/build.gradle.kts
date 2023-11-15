@@ -38,7 +38,8 @@ dependencies {
     implementation(project(":feature:stereo"))
     implementation(project(":feature:search"))
     implementation(project(":feature:storage"))
-
+    implementation(project(":core:ui"))
+    implementation(project(":core:model"))
 
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
