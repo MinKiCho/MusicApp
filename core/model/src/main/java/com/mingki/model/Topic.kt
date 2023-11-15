@@ -2,8 +2,7 @@ package com.mingki.model
 
 data class Topic(
     val id : String,
-    val artist : String,
-    val date : String,
-    val genre : String,
+    val title : String,
+    val items : List<TopicItem>,
     val background : Int,
 )

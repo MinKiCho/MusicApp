@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             setupWithNavController(navController)
         }
 
+
+
         window.statusBarColor = ContextCompat.getColor(this, R.color.transparent_color)
     }
 }
