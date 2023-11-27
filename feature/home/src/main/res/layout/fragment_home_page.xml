@@ -5,9 +5,6 @@
 
     <data>
 
-        <variable
-            name="item"
-            type="com.mingki.model.Topic" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,13 +30,12 @@
             android:id="@+id/topic_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.title}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="96dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.065"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.302"
             tools:text="음악 컨텐츠 제목"
             tools:textColor="@android:color/white" />
 
@@ -58,9 +54,8 @@
             android:id="@+id/topicRecyclerview"
             android:layout_width="150dp"
             android:layout_height="110dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="60dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/topic_item"
             app:layout_constraintTop_toBottomOf="@+id/topic_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
