@@ -20,28 +20,29 @@
             android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:background="@android:color/white"
                 android:id="@+id/homeCollapsingToolbarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="400dp"
                 android:fitsSystemWindows="true">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/homeViewpager2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="20dp"
                     android:fitsSystemWindows="true" />
 
                 <com.google.android.material.tabs.TabLayout
+                    android:background="@android:color/white"
                     android:id="@+id/homeTabLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="bottom"
-                    android:background="@color/transparent_background_color"
+                    app:tabBackground="@drawable/tab_pager_selector"
                     app:tabGravity="center"
                     app:tabIndicatorHeight="0dp"
-                    app:tabMaxWidth="10dp" />
-
+                    app:tabMaxWidth="13dp" />
 
                 <com.google.android.material.appbar.MaterialToolbar
                     android:id="@+id/homeToolbar"

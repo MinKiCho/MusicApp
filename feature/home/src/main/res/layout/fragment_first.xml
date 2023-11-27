@@ -5,9 +5,6 @@
 
     <data>
 
-        <variable
-            name="item"
-            type="com.mingki.model.Topic" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,25 +18,25 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="fitXY"
-            android:src="@drawable/mountains"
+            android:src="@drawable/forest"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/topic_item"
+            android:id="@+id/topicTitle"
+            style="@style/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.title}"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="96dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.065"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.302"
             tools:text="음악 컨텐츠 제목"
             tools:textColor="@android:color/white" />
 
@@ -47,20 +44,43 @@
             android:id="@+id/playButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.958"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topic_item"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/topicTitle"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_play_circle_48" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/topicRecyclerview"
             android:layout_width="150dp"
-            android:layout_height="110dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topic_item" />
+            android:layout_height="130dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/totalMusic"
+            app:layout_constraintTop_toBottomOf="@+id/totalMusic" />
+
+        <TextView
+            android:id="@+id/totalMusic"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            app:layout_constraintStart_toStartOf="@+id/topicTitle"
+            app:layout_constraintTop_toBottomOf="@+id/topicTitle"
+            tools:text="총 x곡" />
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/subText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/totalMusic"
+            app:layout_constraintStart_toEndOf="@+id/totalMusic"
+            app:layout_constraintTop_toTopOf="@+id/totalMusic"
+            tools:text="2023.1.1" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
