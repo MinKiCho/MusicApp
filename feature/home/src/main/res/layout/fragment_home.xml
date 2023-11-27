@@ -17,14 +17,17 @@
             android:id="@+id/homeAppbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll"
+            app:liftOnScroll="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:background="@android:color/white"
                 android:id="@+id/homeCollapsingToolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
-                android:fitsSystemWindows="true">
+                android:background="@android:color/white"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll">
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/homeViewpager2"
@@ -34,11 +37,11 @@
                     android:fitsSystemWindows="true" />
 
                 <com.google.android.material.tabs.TabLayout
-                    android:background="@android:color/white"
                     android:id="@+id/homeTabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_gravity="bottom"
+                    android:background="@android:color/white"
                     app:tabBackground="@drawable/tab_pager_selector"
                     app:tabGravity="center"
                     app:tabIndicatorHeight="0dp"
@@ -48,6 +51,7 @@
                     android:id="@+id/homeToolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll"
                     app:menu="@menu/home_menu" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -59,6 +63,8 @@
             android:id="@+id/homeRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         </androidx.recyclerview.widget.RecyclerView>
