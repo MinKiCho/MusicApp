@@ -10,8 +10,6 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.core.ktx)
+    implementation(project(":feature:today"))
     implementation(libs.appcompat)
-    implementation(libs.material)
 }
