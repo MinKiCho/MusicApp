@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -24,13 +26,14 @@ import java.lang.Math.abs
 
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeClickListener {
     private var _binding: FragmentHomeBinding? = null
     private val homeViewModel: HomeViewModel by viewModels()
     private lateinit var homePagerAdapter: HomePagerAdapter
     private lateinit var moodAdapter: MoodAdapter
     private lateinit var todayReleaseAdapter: TodayReleaseAdapter
     private lateinit var mondayAdapter: MondayAdapter
+    private lateinit var navController: NavController
 
     private val binding get() = _binding!!
 
@@ -71,9 +74,10 @@ class HomeFragment : Fragment() {
 
 
     private fun init() {
+        navController = findNavController()
         homePagerAdapter = HomePagerAdapter(requireActivity())
         moodAdapter = MoodAdapter()
-        todayReleaseAdapter = TodayReleaseAdapter()
+        todayReleaseAdapter = TodayReleaseAdapter(this)
         mondayAdapter = MondayAdapter()
 
         binding.homeViewpager2.apply {
@@ -87,7 +91,7 @@ class HomeFragment : Fragment() {
 
 
         concatAdapter = ConcatAdapter(
-            todayReleaseAdapter, moodAdapter , mondayAdapter
+            todayReleaseAdapter, moodAdapter, mondayAdapter
         )
 
         binding.homeRecyclerView.adapter = concatAdapter
@@ -128,5 +132,9 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun navigationToTodayFragment() {
+        navController.navigate(HomeFragmentDirections.actionHomeFragmentToTodayFragment())
     }
 }

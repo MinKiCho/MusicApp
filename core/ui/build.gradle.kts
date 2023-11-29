@@ -11,6 +11,8 @@ android {
 dependencies {
     implementation(project(":core:model"))
 
+    implementation(libs.core.ktx)
     implementation(libs.material)
     implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.constraintlayout)
 }
